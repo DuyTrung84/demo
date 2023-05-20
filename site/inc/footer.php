@@ -1,5 +1,5 @@
 <?php
-  require "../bootstrap/bootstrap.php"
+  require "../bootstrap/bootstrap.php";
 ?>
 
 <div class="container">
