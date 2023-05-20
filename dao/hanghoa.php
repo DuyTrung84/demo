@@ -20,7 +20,7 @@
         }
        }
        function hang_hoa_select_all(){
-        $sql = "SELECT * FROM hang_hoa order by ma_hh desc";
+        $sql = "SELECT * FROM hang_hoa";
         return pdo_query($sql);
        }
 
