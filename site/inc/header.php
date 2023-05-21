@@ -1,11 +1,11 @@
 
 <?php
-  require "../bootstrap/bootstrap.php"
+  require "./bootstrap/bootstrap.php"
 ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="../img/hinh-nen-may-tinh (4).png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="https://cdn.onlinewebfonts.com/svg/img_142579.png" width="30" height="30" class="d-inline-block align-top" alt="">
       </a>
       <div class="navbar-search">
         <form class="form-inline">

@@ -1,6 +1,6 @@
 
 <?php
-    require "../bootstrap/bootstrap.php"
+    require "./bootstrap/bootstrap.php"
 ?>
 
 <!-- Carousel -->
@@ -14,17 +14,20 @@
   </div>
   
   <!-- The slideshow/carousel -->
+  <div class="container">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../img/hinh-nen-may-tinh (4).png" alt="Los Angeles" class="d-block" style="width:100%">
+      <img src="https://www.w3schools.com/howto/img_woods_wide.jpg" alt="Los Angeles" class="d-block" style="width:100%">
     </div>
     <div class="carousel-item">
-      <img src="../img/hinh-nen-may-tinh (5).jpg" alt="Chicago" class="d-block" style="width:100%">
+      <img src="https://www.w3schools.com/howto/img_5terre_wide.jpg" alt="Chicago" class="d-block" style="width:100%">
     </div>
     <div class="carousel-item">
-      <img src="../img/hinh-nen-may-tinh (7).jpg" alt="New York" class="d-block" style="width:100%">
+      <img src="https://www.w3schools.com/howto/img_lights_wide.jpg" alt="New York" class="d-block" style="width:100%; heigth:50%">
     </div>
   </div>
+  </div>
+
   
   <!-- Left and right controls/icons -->
   <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">

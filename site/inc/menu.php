@@ -1,6 +1,6 @@
 
 <?php
-    require "../bootstrap/bootstrap.php"
+    require "./bootstrap/bootstrap.php"
 ?>
 <body>
   <div class="container">
