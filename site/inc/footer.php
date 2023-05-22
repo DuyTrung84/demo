@@ -3,5 +3,5 @@
 ?>
 
 <footer class="container-fluid text-center py-4 bg-light mt-5">
-  <p>Footer</p>
+  <p>© Copyright 2023</p>
 </footer>
