@@ -1,6 +1,3 @@
-<?php 
-    include './layout/header.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +7,12 @@
     <title>Admin</title>
 </head>
 <body>
-    <h3 class="text-center bg-light text-success">Công cụ quản trị website</h3>
+    <?php 
+        include './layout/header.php';
+    ?>
+    <h3 class="text-center bg-light text-success py-3">Công cụ quản trị website</h3>
+    <?php 
+    include './layout/footer.php';
+    ?>
 </body>
 </html>
