@@ -14,8 +14,8 @@
         </form>
       </div>
       <div class="navbar-buttons">
-        <a class="btn btn-outline-primary" href="dangky.php">Đăng ký</a>
-        <a class="btn btn-outline-secondary" href="dangnhap.php">Đăng nhập</a>
+        <a class="btn btn-outline-primary" href="../taikhoan/dangky.php">Đăng ký</a>
+        <a class="btn btn-outline-secondary" href="../taikhoan/dangnhap.php">Đăng nhập</a>
       </div>
     </div>
   </nav>
