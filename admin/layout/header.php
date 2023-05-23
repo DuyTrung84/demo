@@ -12,9 +12,11 @@
 <body>
 
 <div class="container">
-  <h1 class="text-danger bg-light">Quản trị website</h1>
-
+  <h1 class="alert alert-success ">Quản trị website</h1>
   <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="../site/layout.php">Đi tới trang web</a>
+    </li>
     <li class="nav-item">
       <a class="nav-link" href="../admin/index.php">Trang chủ</a>
     </li>
@@ -30,12 +32,12 @@
     <li class="nav-item">
       <a class="nav-link" href="../admin/taikhoan.php">Tài khoản</a>
     </li>
-	<li class="nav-item">
+	  <li class="nav-item">
       <a class="nav-link" href="../admin/thongke.php">Thống kê</a>
     </li>
   </ul>
   
 </div>
 
-</body>
-</html>
+
+
