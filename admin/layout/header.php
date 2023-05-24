@@ -11,11 +11,15 @@
 </head>
 <body>
 
+<?php
+  require './../global.php'
+?>
+
 <div class="container">
   <h1 class="alert alert-success ">Quản trị website</h1>
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link" href="../site/layout.php">Đi tới trang web</a>
+      <a class="nav-link" href="<?=$SITE_URL?>/trang-chinh">Đi tới trang web</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="../admin/index.php">Trang chủ</a>

@@ -1,6 +1,6 @@
 
 <?php
-  require "./bootstrap/bootstrap.php"
+  require "../bootstrap/bootstrap.php"
 ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -14,8 +14,8 @@
         </form>
       </div>
       <div class="navbar-buttons">
-        <a class="btn btn-outline-primary" href="../taikhoan/dangky.php">Đăng ký</a>
-        <a class="btn btn-outline-secondary" href="../taikhoan/dangnhap.php">Đăng nhập</a>
+        <a class="btn btn-outline-primary" href="<?=$SITE_URL?>/taikhoan/dangky.php">Đăng ký</a>
+        <a class="btn btn-outline-secondary" href="<?=$SITE_URL?>/taikhoan/dangnhap.php">Đăng nhập</a>
       </div>
     </div>
   </nav>

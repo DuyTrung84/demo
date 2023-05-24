@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
     ?>
     <main>
         <?php
-            require $VIEW_NAME;                           
+            require $VIEW_NAME;               
         ?>
     </main>
     <?php
