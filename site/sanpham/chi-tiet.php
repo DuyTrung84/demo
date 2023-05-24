@@ -1,6 +1,5 @@
 <?php
     require "../bootstrap/bootstrap.php";
-    require "../inc/header.php";
 ?>
 
 <div class="container">
@@ -9,10 +8,10 @@
             <img src="../img/hinh-nen-may-tinh (4).png" alt="Product image" class="img-fluid">
         </div>
         <div class="col-md-6">
-            <h2>Tên sản phẩm</h2>
-            <p class="text-muted">Mô tả sản phẩm</p>
-            <h3>Giá: $99.99</h3>
-            <p class="text-muted">Số lượng còn lại: 10</p>
+            <h2><?php echo $product['ten_hh']?></h2>
+            <p class="text-muted"><?php echo $product['mo_ta']?></p>
+            <h3>Giá: $<?php echo $product['don_gia']?></h3>
+            <p class="text-muted">Số lượt mua: <?php echo $product['so_luot_xem']?></p>
             <button class="btn btn-primary">Mua hàng</button>
         </div>
     </div>
@@ -80,8 +79,3 @@
 </div>
 </div>
 
-
-
-    <?php
-        require "../inc/footer.php"
-    ?>
