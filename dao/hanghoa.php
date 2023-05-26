@@ -23,7 +23,12 @@
         $sql = "SELECT * FROM hang_hoa";
         return pdo_query($sql);
        }
-
+       function hang_hoa_select_all_with_loai(){
+        $sql = "SELECT hang_hoa.ma_hh, hang_hoa.ten_hh, hang_hoa.don_gia, hang_hoa.giam_gia, hang_hoa.hinh, hang_hoa.so_luot_xem, hang_hoa.mo_ta, loai_hang.ten_loai 
+                FROM hang_hoa
+                JOIN loai_hang ON hang_hoa.ma_loai = loai_hang.ma_loai";
+        return pdo_query($sql);
+    }
        function hang_hoa_select_by_id($ma_hh){
         $sql = "SELECT * FROM hang_hoa WHERE ma_hh=?";
         return pdo_query_one($sql, $ma_hh);

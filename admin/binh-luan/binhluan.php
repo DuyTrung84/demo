@@ -1,8 +1,3 @@
-<?php 
-    include './layout/header.php';
-    require '../dao/pdo.php';
-    require '../dao/binhluan.php';
-?>
 <body>
     <h3 class="text-center bg-light text-success">Quản lý bình luận</h3>
     <table class="table table-condensed">
@@ -23,7 +18,7 @@
         } 
         $ds_bl=binh_luan_select_all();
         foreach($ds_bl as $row){
-          $del_link="binhluan.php?ma_bl=".$row['ma_bl'];
+          $del_link="index.php?btn_delete&ma_bl=".$row['ma_bl'];
       ?>
         <tr>
           <td><?php echo $row['ma_bl'] ?></td>
