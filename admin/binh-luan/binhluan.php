@@ -23,7 +23,7 @@
         <tr>
           <td><?php echo $row['ma_bl'] ?></td>
           <td><?php echo $row['noi_dung'] ?></td>
-          <td><?php echo $row['ma_kh'] ?></td>
+          <td><?php echo $row['ma_tk'] ?></td>
           <td><?php echo $row['ma_hh'] ?></td>
           <td><?php echo $row['ngay_bl'] ?></td>
           <th>
