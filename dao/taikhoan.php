@@ -23,15 +23,22 @@
         $sql = "SELECT * FROM tai_khoan";
         return pdo_query($sql);
        }
-       function tk_select_by_id($ma_tk){
+       function tk_select_by_id($email){
         $sql = "SELECT * FROM tai_khoan WHERE ma_tk=?";
-        return pdo_query_one($sql, $ma_tk);
+        return pdo_query_one($sql, $email);
        }
+    //    function tk_select_by_email($email){
+    //     $sql = "SELECT * FROM tai_khoan WHERE ma_tk=?";
+    //     return pdo_query_one($sql, $email);
+    //    }
        function tk_exist($ma_tk){
         $sql = "SELECT count(*) FROM tai_khoan WHERE ma_tk=?";
         return pdo_query_value($sql, $ma_tk) > 0;
        }
     
-
+       function tk_select_by_email($email){
+        $sql = "SELECT * FROM tai_khoan WHERE email=?";
+        return pdo_query_one($sql, $email);
+       }
                             
 ?>
