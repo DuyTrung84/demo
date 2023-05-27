@@ -1,5 +1,6 @@
 <?php
     require "../bootstrap/bootstrap.php";
+    require "../inc/slider.php";
 ?>
 
 <div class="container bg-3 text-center">    
