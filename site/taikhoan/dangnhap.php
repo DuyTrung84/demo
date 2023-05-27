@@ -50,7 +50,7 @@
                 
                 $acc=tk_select_by_email($email); 
                 if ($acc==null) {
-                    // echo '<script>alert("Tài khoản không tồn tại!")</script>';
+                    echo '<p class="text-danger">Tài khoản không tồn tại</p>';
                 }else{
 
                 
@@ -75,7 +75,7 @@
                             }
                     }
                     else {
-                        // echo '<script>alert("Sai tài khoản hoặc mật khẩu!")</script>';
+                        echo '<p class="text-danger">Mật khẩu không chính xác.</p>';
                     }
                     
                 }
