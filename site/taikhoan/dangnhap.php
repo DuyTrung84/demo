@@ -68,7 +68,7 @@
                         }
                            
                         if ($acc['vai_tro']==1) {
-                            // header("Location: $ADMIN_URL/trang-chinh/");
+                            header("Location: $ADMIN_URL/trang-chinh/");
                         }else
                             {
                                 header("Location: $SITE_URL/trang-chinh");

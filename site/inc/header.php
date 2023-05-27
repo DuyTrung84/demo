@@ -11,6 +11,7 @@
   }
 
   require "../bootstrap/bootstrap.php";
+  // require_once "../inc/require.php";
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
@@ -26,6 +27,7 @@
     <div class="navbar-buttons">
       <?php if ($isLoggedIn): ?>
         <form method="POST">
+          <!-- <span>Xin chào <?php echo $ho_ten ?></span> -->
           <button class="btn btn-outline-danger" type="submit" name="logout">Đăng xuất</button>
         </form>
       <?php else: ?>

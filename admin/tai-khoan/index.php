@@ -5,7 +5,7 @@ extract($_REQUEST);
 if(exist_param("btn_update")){
  $VIEW_NAME = "tai-khoan/ed_taikhoan.php";
 }
-else if(exist_param("btn-delete")){
+else if(exist_param("btn_delete")){
  $VIEW_NAME = "tai-khoan/taikhoan.php";
 }
 else if(exist_param("btn_edit")){
@@ -36,7 +36,7 @@ if(exist_param("btn_update")){
 }
 else if(exist_param("btn_delete")){
     try {
-        tk_delete('ma_tk');
+        tk_delete($ma_tk);
     $MESSAGE = "Xóa thành công!";
     } 
     catch (Exception $exc) {
