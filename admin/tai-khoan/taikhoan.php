@@ -16,9 +16,6 @@
     </thead>
     <tbody>
       <?php
-        // if(isset($_GET['ma_tk'])){
-        //   tk_delete($_GET['ma_tk']);
-        // }
         $tk=tk_select_all();
         foreach($tk as $row){
           extract($row);
