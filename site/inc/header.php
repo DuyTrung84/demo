@@ -1,21 +1,37 @@
 
 <?php
-  require "./bootstrap/bootstrap.php"
+  $isLoggedIn = isset($_SESSION['user']);
+
+  if (isset($_POST['logout'])) {
+    session_destroy();
+    setcookie('email', '', time() - 3600);
+    setcookie('mat_khau', '', time()- 3600);
+    header('Location: ' . "$SITE_URL/trang-chinh");
+    exit;
+  }
+
+  require "../bootstrap/bootstrap.php";
 ?>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="https://cdn.onlinewebfonts.com/svg/img_142579.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      </a>
-      <div class="navbar-search">
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
-        </form>
-      </div>
-      <div class="navbar-buttons">
-        <a class="btn btn-outline-primary" href="dangky.php">Đăng ký</a>
-        <a class="btn btn-outline-secondary" href="dangnhap.php">Đăng nhập</a>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://cdn.onlinewebfonts.com/svg/img_142579.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <div class="navbar-search">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+      </form>
     </div>
-  </nav>
+    <div class="navbar-buttons">
+      <?php if ($isLoggedIn): ?>
+        <form method="POST">
+          <button class="btn btn-outline-danger" type="submit" name="logout">Đăng xuất</button>
+        </form>
+      <?php else: ?>
+        <a class="btn btn-outline-primary" href="<?=$SITE_URL?>/taikhoan/dangky.php">Đăng ký</a>
+        <a class="btn btn-outline-secondary" href="<?=$SITE_URL?>/taikhoan/dangnhap.php">Đăng nhập</a>
+      <?php endif; ?>
+    </div>
+  </div>
+</nav>

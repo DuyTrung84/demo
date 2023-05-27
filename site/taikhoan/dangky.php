@@ -9,29 +9,44 @@
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">Đăng ký</h2>
-            <form>
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                    <input type="email" class="form-control" name="email" placeholder="Nhập email">
                 </div>
                 <div class="form-group">
                     <label for="password">Mật khẩu</label>
-                    <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu">
+                    <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu">
                 </div>
                 <div class="form-group">
                     <label for="confirm-password">Nhập lại mật khẩu</label>
-                    <input type="password" class="form-control" id="confirm-password" placeholder="Nhập lại mật khẩu">
+                    <input type="password" class="form-control" name="confirm-password" placeholder="Nhập lại mật khẩu">
                 </div>
                 <div class="form-group">
                     <label for="fullname">Họ tên</label>
-                    <input type="text" class="form-control" id="fullname" placeholder="Nhập họ tên">
+                    <input type="text" class="form-control" name="ho_ten" placeholder="Nhập họ tên">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="image">Hình đại diện</label>
-                    <input type="file" class="form-control" id="image">
-                </div>
-                <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    <input type="file" class="form-control" name="image">
+                </div> -->
+                <button type="submit" class="btn btn-primary" name="btn_signup">Đăng ký</button>
             </form>
+
+            <?php
+                    if (isset($_POST['btn_signup'])) {
+                        $ho_ten=$_POST['ho_ten'];
+                        $mat_khau=$_POST['password'];
+                        $repass=$_POST["confirm-password"];
+                        $email=$_POST["email"];
+                        $img_name="";
+                        $vai_tro=0;
+                        // $check=tk_select_by_email($email);
+                        tk_insert($email,$mat_khau,$ho_ten,$img_name,$vai_tro);
+                        echo '<script>alert("Đăng kí tài khoản thành công")</script>';
+                        header("Location : dangnhap.php");
+                    }
+            ?>
         </div>
     </div>
 </div>

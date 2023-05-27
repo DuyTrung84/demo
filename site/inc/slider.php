@@ -1,6 +1,6 @@
 
 <?php
-    require "./bootstrap/bootstrap.php"
+    require "../bootstrap/bootstrap.php"
 ?>
 
 <!-- Carousel -->
