@@ -4,6 +4,9 @@
   <h1 class="alert alert-success ">Quản trị website</h1>
   <ul class="nav">
     <li class="nav-item">
+      <a class="nav-link" href="<?=$SITE_URL?>/trang-chinh">Đi tới trang web</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="<?=$ADMIN_URL?>/trang-chinh">Trang chủ</a>
     </li>
     <li class="nav-item">
