@@ -36,7 +36,7 @@ if(exist_param("btn_update")){
 }
 else if(exist_param("btn_delete")){
     try {
-        tk_delete('ma_tk');
+        tk_delete($ma_tk);
     $MESSAGE = "Xóa thành công!";
     } 
     catch (Exception $exc) {
