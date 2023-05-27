@@ -27,7 +27,14 @@
     <div class="navbar-buttons">
       <?php if ($isLoggedIn): ?>
         <form method="POST">
-          <!-- <span>Xin chào <?php echo $ho_ten ?></span> -->
+        <?php
+                if (isset($_SESSION['user'])&&$_SESSION['user']['vai_tro']==1) {
+            ?>
+                <a href="<?=$ADMIN_URL?>/trang-chinh/"><i class="fa-solid fa-list-check" style="color: white;font-size: 20px;width: 20px;height: 20px;"></i></a>
+            <?php
+                }
+            ?>
+          <span>Xin chào <?php echo $_SESSION['user']['ho_ten'] ?></span>
           <button class="btn btn-outline-danger" type="submit" name="logout">Đăng xuất</button>
         </form>
       <?php else: ?>
