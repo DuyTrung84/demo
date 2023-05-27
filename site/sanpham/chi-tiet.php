@@ -59,64 +59,52 @@
     <div class="row">
 	<div class="col-md-12 mt-5 py-5">
 		<h4>Bình luận</h4>
-        
-        <!-- if(binh_luan_exist("noi_dung")){
-                    $ngay_bl = date_format(date_create(), 'Y-m-d')
-                }
-                $binh_luan_list = binh_luan_select_by_hang_hoa($ma_hh) -->
 
-        <table style="border-collapse:collapse;">
-            <!-- <tr >
-                <td id="ho_ten" name="ho_ten">Người bình luận</td>
-                <td id="noi_dung" name="noi_dung">Nội dung</td>
-                <td id="ngay_bl" name="ngay_bl">Ngày bình luận</td>
-            </tr> -->
-        
-            <?php
-                // if(binh_luan_exist('ma_bl')){
-                //     $ngay_bl = date_format(date_create(), 'Y-m-d');
-                // }
-                // $binh_luan_list = binh_luan_select_by_hang_hoa($ma_hh);
-                // foreach($binh_luan_list as $bl){
-                //     echo `<tr>
-                //     <td><b>$bl[ho_ten]</b></td>
-                //     <td>$bl[noi_dung]</td>
-                //     <td>$bl[ngay_bl]</td>
-                //     </tr>`;
-                // }
-                $binh_luan_list = hien_thi_binh_luan_theo_hang_hoa($ma_hh);
-
-                if (!empty($binh_luan_list)) {
-                    echo "Bình luận cho hàng hoá có mã " . $ma_hh . ":<br>";
-                    echo "<table>";
-                    echo "<tr><th>Mã tài khoản</th><th>Nội dung</th><th>Ngày bình luận</th></tr>";
+        <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">Các bình luận</h5>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Bình luận</th>
+                    <th scope="col">Thời gian</th>
+                    <th scope="col"></th>
+                </tr>
+                
+                </thead>
+                <tbody>
+                <?php
+                    
+                    if(binh_luan_exist("noi_dung")){
+                           
+                    
+                    
+                    $ngay_bl = date_format(date_create(), 'Y-m-d');
+                    
+                    }
+                    $binh_luan_list = binh_luan_select_by_hang_hoa($ma_sp); 
                     foreach ($binh_luan_list as $bl) {
-                        echo "<tr>";
-                        echo "<td><b>{$bl['ma_tk']}</b></td>";
-                        echo "<td>{$bl['noi_dung']}</td>";
-                        echo "<td>{$bl['ngay_bl']}</td>";
-                        echo "</tr>";
+                        echo    "<tr><td><b>$bl[ho_ten]</b></td>
+                                <td>$bl[noi_dung]</td>
+                                <td>$bl[ngay_bl]</td>
+                                </tr>";
+                    
                     }
-                        echo "</table>";
-                    } else {
-                        echo "Không có bình luận nào cho hàng hoá có mã " . $ma_hh . "<br>";
-                    }
-            ?>
-        </table>
+                    
+                    ?>
+                </tbody>
+            </table>
+            </div>
+            </div>
+                
+                
         <?php
             if(!isset($_SESSION['user'])){
                 echo "<b>Đăng nhập để bình luận về sản phẩm này</b>";
             } else{
         ?>
 		<form method="POST" action="<?= $_SERVER["REQUEST_URI"] ?>">
-			<div class="form-group">
-				<label for="name">Họ tên</label>
-				<input type="text" class="form-control" id="name" name="name" required>
-			</div>
-			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="email" class="form-control" id="email" name="email" required>
-			</div>
 			<div class="form-group">
 				<label for="comment">Bình luận</label>
 				<textarea class="form-control" name="noi_dung" rows="3" required></textarea>
