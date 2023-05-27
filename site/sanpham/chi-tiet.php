@@ -59,7 +59,56 @@
     <div class="row">
 	<div class="col-md-12 mt-5 py-5">
 		<h4>Bình luận</h4>
-		<form method="POST" action="process-comment.php">
+        
+        <!-- if(binh_luan_exist("noi_dung")){
+                    $ngay_bl = date_format(date_create(), 'Y-m-d')
+                }
+                $binh_luan_list = binh_luan_select_by_hang_hoa($ma_hh) -->
+
+        <table style="border-collapse:collapse;">
+            <!-- <tr >
+                <td id="ho_ten" name="ho_ten">Người bình luận</td>
+                <td id="noi_dung" name="noi_dung">Nội dung</td>
+                <td id="ngay_bl" name="ngay_bl">Ngày bình luận</td>
+            </tr> -->
+        
+            <?php
+                // if(binh_luan_exist('ma_bl')){
+                //     $ngay_bl = date_format(date_create(), 'Y-m-d');
+                // }
+                // $binh_luan_list = binh_luan_select_by_hang_hoa($ma_hh);
+                // foreach($binh_luan_list as $bl){
+                //     echo `<tr>
+                //     <td><b>$bl[ho_ten]</b></td>
+                //     <td>$bl[noi_dung]</td>
+                //     <td>$bl[ngay_bl]</td>
+                //     </tr>`;
+                // }
+                $binh_luan_list = hien_thi_binh_luan_theo_hang_hoa($ma_hh);
+
+                if (!empty($binh_luan_list)) {
+                    echo "Bình luận cho hàng hoá có mã " . $ma_hh . ":<br>";
+                    echo "<table>";
+                    echo "<tr><th>Mã tài khoản</th><th>Nội dung</th><th>Ngày bình luận</th></tr>";
+                    foreach ($binh_luan_list as $bl) {
+                        echo "<tr>";
+                        echo "<td><b>{$bl['ma_tk']}</b></td>";
+                        echo "<td>{$bl['noi_dung']}</td>";
+                        echo "<td>{$bl['ngay_bl']}</td>";
+                        echo "</tr>";
+                    }
+                        echo "</table>";
+                    } else {
+                        echo "Không có bình luận nào cho hàng hoá có mã " . $ma_hh . "<br>";
+                    }
+            ?>
+        </table>
+        <?php
+            if(!isset($_SESSION['user'])){
+                echo "<b>Đăng nhập để bình luận về sản phẩm này</b>";
+            } else{
+        ?>
+		<form method="POST" action="<?= $_SERVER["REQUEST_URI"] ?>">
 			<div class="form-group">
 				<label for="name">Họ tên</label>
 				<input type="text" class="form-control" id="name" name="name" required>
@@ -70,11 +119,22 @@
 			</div>
 			<div class="form-group">
 				<label for="comment">Bình luận</label>
-				<textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+				<textarea class="form-control" name="noi_dung" rows="3" required></textarea>
 			</div>
 			<input type="hidden" name="product_id" value="123">
-			<button type="submit" class="btn btn-primary">Gửi bình luận</button>
+			<button type="submit" class="btn btn-primary" name="insert_bl">Gửi bình luận</button>
 		</form>
+
+        <?php 
+            $ma_tk = $_SESSION['user']['ma_tk'];
+            if (isset($_POST['insert_bl'])) {
+                $noi_dung=$_POST['noi_dung'];
+                $ngay_bl = date_format(date_create(), 'Y-m-d');
+                binh_luan_insert($noi_dung, $ma_sp, $ma_tk, $ngay_bl);
+                echo "<script>location.href = '$SITE_URL/sanpham/index.php?chi-tiet&ma_hh=$ma_hh';</script>";
+            }
+        }
+        ?>
 	</div>
 </div>
 </div>

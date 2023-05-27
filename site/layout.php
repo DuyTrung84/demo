@@ -13,6 +13,7 @@
     <?php
         require "../bootstrap/bootstrap.php";
         require "../inc/header.php";
+        
     ?>
     <main>
         <?php
