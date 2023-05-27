@@ -1,8 +1,4 @@
-<?php 
-    include './layout/header.php';
-    require '../dao/pdo.php';
-    require '../dao/hanghoa.php';
-?>
+
 <body>
     <h3 class="text-center bg-light text-success">Quản lý hàng hoá</h3>
 
@@ -22,24 +18,24 @@
     </thead>
     <tbody>
       <?php 
-        if(isset($_GET['ma_hh'])){
-          hang_hoa_delete($_GET['ma_hh']);
-        }
-        $hh=hang_hoa_select_all();
+        // if(isset($_GET['ma_hh'])){
+        //   hang_hoa_delete($_GET['ma_hh']);
+        // }
+        $hh=hang_hoa_select_all_with_loai();
         foreach($hh as $row){
         extract($row);
-        $del_link="hanghoa.php?ma_hh=".$ma_hh;
-        $ed_link="ed_hanghoa.php?ma_hh=".$ma_hh;
+        $del_link="index.php?btn_delete&ma_hh=".$ma_hh;
+        $ed_link="index.php?btn_edit&ma_hh=".$ma_hh;
       ?>
         <tr>
           <td><?php echo $row['ma_hh'] ?></td>
           <td><?php echo $row['ten_hh'] ?></td>
-          <td><img src="img/<?php echo $row['hinh'] ?>" alt="" width="200"></td>
+          <td><img src="<?=$CONTENT_URL?>/img/<?php echo $row['hinh'] ?>" alt="" width="200"></td>
           <td><?php echo $row['don_gia'] ?></td>
           <td><?php echo $row['giam_gia'] ?></td>
           <td><?php echo $row['so_luot_xem'] ?></td>
           <td><?php echo $row['mo_ta'] ?></td>
-          <td><?php echo $row['ma_loai'] ?></td>
+          <td><?php echo $row['ten_loai'] ?></td>
           
 
           <th>
@@ -54,6 +50,6 @@
         
     </tbody>
   </table><hr>
-  <a href="in_hanghoa.php" class="btn btn-primary">Thêm hàng hoá</a>
+  <a href="index.php?btn_insert&" class="btn btn-primary">Thêm hàng hoá</a>
 </body>
 </html>

@@ -1,9 +1,3 @@
-<?php 
-    include './layout/header.php';
-    require '../dao/pdo.php';
-    require '../dao/hanghoa.php';
-    require '../dao/loai.php';
-?>
 <div class="container">
     <h2 class="text-center bg-light text-success">Thêm loại</h2>
     <form action="" method="post" enctype="multipart/form-data" >
@@ -34,23 +28,23 @@
                 ?>   
               </select>
         </div>
-        <button type="submit" class="btn btn-primary" name="btn_add">Thêm</button>
+        <button type="submit" class="btn btn-primary" name="btn-insert">Thêm</button>
     </form>
     <?php
-        if(isset($_POST['btn_add'])){
-            $ten_hh=$_POST['ten_hh'];
-            $don_gia=$_POST['don_gia'];
-            $giam_gia=$_POST['giam_gia'];
-            $so_luot_xem=$_POST['so_luot_xem'];
-            $mo_ta=$_POST['mo_ta'];
-            $ma_loai=$_POST['ma_loai'];
+        // if(isset($_POST['btn-insert'])){
+        //     $ten_hh=$_POST['ten_hh'];
+        //     $don_gia=$_POST['don_gia'];
+        //     $giam_gia=$_POST['giam_gia'];
+        //     $so_luot_xem=$_POST['so_luot_xem'];
+        //     $mo_ta=$_POST['mo_ta'];
+        //     $ma_loai=$_POST['ma_loai'];
 
-            $img_name=$_FILES['img']['name'];
-            $img_tmp=$_FILES['img']['tmp_name'];
-            move_uploaded_file($img_tmp,'./img/'.$img_name);
+        //     $img_name=$_FILES['img']['name'];
+        //     $img_tmp=$_FILES['img']['tmp_name'];
+        //     move_uploaded_file($img_tmp,'./img/'.$img_name);
 
-            hang_hoa_insert($ten_hh,$don_gia,$giam_gia,$img_name,$so_luot_xem,$mo_ta,$ma_loai);
-            header("Location: hanghoa.php");
-        }
+        //     hang_hoa_insert($ten_hh,$don_gia,$giam_gia,$img_name,$so_luot_xem,$mo_ta,$ma_loai);
+        //     header("Location: hanghoa.php");
+        // }
     ?>       
 </div>
