@@ -3,7 +3,7 @@
     /*
     * Định nghĩa các url cần thiết được sử dụng trong website
     */
-    $ROOT_URL = "/xshop";
+    $ROOT_URL = "/duanmau";
     $CONTENT_URL = "$ROOT_URL/content";
     $ADMIN_URL = "$ROOT_URL/admin";
     $SITE_URL = "$ROOT_URL/site";

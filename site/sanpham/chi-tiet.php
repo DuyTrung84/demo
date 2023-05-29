@@ -69,7 +69,8 @@
                     <th scope="col">Tên</th>
                     <th scope="col">Bình luận</th>
                     <th scope="col">Thời gian</th>
-                    <th scope="col"></th>
+                    <th scope="col">Thao tác</th>
+                    
                 </tr>
                 
                 </thead>
@@ -83,16 +84,22 @@
                     $ngay_bl = date_format(date_create(), 'Y-m-d');
                     
                     }
-                    $binh_luan_list = binh_luan_select_by_hang_hoa($ma_sp); 
+                    $binh_luan_list = binh_luan_select_by_hang_hoa($ma_hh); 
                     foreach ($binh_luan_list as $bl) {
                         echo    "<tr><td><b>$bl[ho_ten]</b></td>
-                                <td>$bl[noi_dung]</td>
-                                <td>$bl[ngay_bl]</td>
+                                <td><span name='noi_dung'>$bl[noi_dung]</span></td>
+                                <td><span name='ngay_bl'>$bl[ngay_bl]</span></td>
+                                <th>
+                                    <button name='btn_ed'><a href='$SITE_URL/sanpham/ed-binhluan.php?chi-tiet&ma_hh=$ma_hh'>Sửa</a></button>
+                                    <button name='btn_delete'>Xóa</button>
+                                </th>
                                 </tr>";
-                    
                     }
                     
+                    
+                    
                     ?>
+                    
                 </tbody>
             </table>
             </div>

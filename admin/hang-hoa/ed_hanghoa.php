@@ -1,6 +1,6 @@
 <div class="container">
       
-  <h2 class="text-center bg-light text-success">Sửa tài khoản</h2> 
+  <h2 class="text-center bg-light text-success">Sửa hàng hóa</h2> 
     <?php
           if (isset($_GET['ma_hh'])) {
             $ma_hh=$_GET['ma_hh'];
