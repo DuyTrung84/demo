@@ -34,7 +34,7 @@
             <?php
                 }
             ?>
-          <span>Xin chào <?php echo $_SESSION['user']['ho_ten'] ?></span>
+          <span>Xin chào <a href="<?=$SITE_URL?>/taikhoan/quan-ly-tk.php"><?php echo $_SESSION['user']['ho_ten'] ?></a></span>
           <button class="btn btn-outline-danger" type="submit" name="logout">Đăng xuất</button>
         </form>
       <?php else: ?>

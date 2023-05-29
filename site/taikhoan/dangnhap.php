@@ -41,19 +41,9 @@
                 
                 $email=$_POST["email"];
                 $mat_khau=$_POST['mat_khau'];
-
-                if (empty($email)) {
-                    echo '<p class="text-danger">Vui lòngnhập Email của bạn.</p>';
-                } else if (empty($mat_khau)) {
-                    echo '<p class="text-danger">Vui lòng nhập Mật khẩu của bạn.</p>';
-                }
                 
                 $acc=tk_select_by_email($email); 
-                if ($acc==null) {
-                    echo '<p class="text-danger">Tài khoản không tồn tại</p>';
-                }else{
-
-                
+                if ($acc) {
                     if ($acc['mat_khau']==$mat_khau) {
                         $_SESSION['user']=$acc;
                         
@@ -73,9 +63,6 @@
                             {
                                 header("Location: $SITE_URL/trang-chinh");
                             }
-                    }
-                    else {
-                        echo '<p class="text-danger">Mật khẩu không chính xác.</p>';
                     }
                     
                 }
@@ -98,6 +85,3 @@
         </div>
     </div>
 </div>
-    <?php
-        ob_flush();
-    ?>
