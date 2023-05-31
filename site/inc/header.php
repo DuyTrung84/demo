@@ -21,7 +21,7 @@
     <div class="navbar-search">
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit"><i  class="fa">&#xf002;</i></button>
       </form>
     </div>
     <div class="navbar-buttons">
@@ -30,12 +30,13 @@
         <?php
                 if (isset($_SESSION['user'])&&$_SESSION['user']['vai_tro']==1) {
             ?>
-                <a href="<?=$ADMIN_URL?>/trang-chinh/"><i class="fa-solid fa-list-check" style="color: white;font-size: 20px;width: 20px;height: 20px;"></i></a>
+                <a href="<?=$ADMIN_URL?>/trang-chinh/"><i class="fa-solid fa-list-check" style="color: black;font-size: 20px;width: 20px;height: 20px;"></i></a>
             <?php
                 }
             ?>
-          <span>Xin chào <a href="<?=$SITE_URL?>/taikhoan/quan-ly-tk.php"><?php echo $_SESSION['user']['ho_ten'] ?></a></span>
-          <button class="btn btn-outline-danger" type="submit" name="logout">Đăng xuất</button>
+          <span>Xin chào <a class="text-decoration-none" href="<?=$SITE_URL?>/taikhoan/quan-ly-tk.php"><?php echo $_SESSION['user']['ho_ten'] ?></a></span>
+
+          <button class="btn btn-outline-danger" type="submit" name="logout"> Đăng xuất <i class="fa fa-sign-out"></i></button>
         </form>
       <?php else: ?>
         <a class="btn btn-outline-primary" href="<?=$SITE_URL?>/taikhoan/dangky.php">Đăng ký</a>

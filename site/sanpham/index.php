@@ -22,3 +22,4 @@ $i=0;
 
 
 require "../layout.php";
+?>
