@@ -8,7 +8,7 @@
         $sql = "UPDATE tai_khoan SET email=?,mat_khau=?,ho_ten=?,hinh=?,vai_tro=? WHERE ma_tk=?";
         pdo_execute($sql,$email,$mat_khau,$ho_ten,$hinh,$vai_tro,$ma_tk);
        }
-       function tk_update_mk($ma_tk,$mat_khau){
+       function tk_update_mk($mat_khau,$ma_tk){
         $sql = "UPDATE tai_khoan SET mat_khau=? WHERE ma_tk=?";
         pdo_execute($sql,$mat_khau,$ma_tk);
        }
@@ -44,6 +44,11 @@
        function tk_select_by_email($email){
         $sql = "SELECT * FROM tai_khoan WHERE email=?";
         return pdo_query_one($sql, $email);
+       }
+
+       function tk_select_by_mk($mat_khau){
+        $sql = "SELECT * FROM tai_khoan WHERE mat_khau=?";
+        return pdo_query_one($sql, $mat_khau);
        }
                             
 ?>

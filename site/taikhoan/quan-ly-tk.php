@@ -32,43 +32,54 @@
 				</table>
 			</div>
 			<div id="menu1" class="tab-pane fade">
-				<h3>Đổi mật khẩu</h3>
-				
-				<form method="post">
-					<?php
-						extract($_SESSION['user']);
-					?>
-					<div class="form-group">
-						<label for="old-password">Mật khẩu cũ:</label>
-						<input type="password" class="form-control" id="old-password" name="mat_khau">
-					</div>
-					<div class="form-group">
-						<label for="new-password">Mật khẩu mới:</label>
-						<input type="password" class="form-control" id="new-password" name="mat_khau">
-					</div>
-					<div class="form-group">
-						<label for="confirm-password">Xác nhận mật khẩu mới:</label>
-						<input type="password" class="form-control" id="confirm-password">
-					</div>
-					<button type="submit" class="btn btn-primary" name="btn_ed">Đổi mật khẩu</button>
-					
-				<?php
-					// }else{
-					// 	echo "Tài khoản không tồn tại";
-					// }
-					if(isset($_POST['btn_ed'])){
-						$ma_tk=$_SESSION['user']['ma_tk'];
-						$mat_khau=$_POST['mat_khau'];
-			
-						tk_update_mk($ma_tk,$mat_khau);
-						header('Location: quan-ly-tk.php');
-				  } 
-				?>
-				</form>
+    <h3>Đổi mật khẩu</h3>
+    
+    <form method="post">
+        <?php
+            extract($_SESSION['user']);
 
-				<?php
+        ?>
+        <div class="form-group">
+			
+            <label for="old-password">Mật khẩu cũ:</label>
+            <input type="password" class="form-control" name="mat_khau">
+        </div>
+        <div class="form-group">
+            <label for="new-password">Mật khẩu mới:</label>
+            <input type="password" class="form-control"  name="mat_khau2">
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Xác nhận mật khẩu mới:</label>
+            <input type="password" class="form-control" name="mat_khau3">
+        </div>
+        <button type="submit" class="btn btn-primary" name="btn_ed">Đổi mật khẩu</button>
+        
+        <?php
+        if(isset($_POST['btn_ed'])){
+			$tk=tk_select_by_id($_SESSION['user']['ma_tk']);
+			$mat_khau=$_POST['mat_khau'];
+			$mat_khau2=$_POST['mat_khau2'];
+			$mat_khau3=$_POST['mat_khau3'];
+			
+			if ($mat_khau==$tk['mat_khau']) {
+				if ($mat_khau2==$mat_khau3) {
+					tk_update_mk($mat_khau3,$_SESSION['user']['ma_tk']);
+					echo '<script>alert("Đổi mật khẩu thành công!")</script>';
+					$_SESSION['user']=tk_select_by_id($_SESSION['user']['ma_tk']);
 					
-				?>
-			</div>
+				}
+				else{
+					echo '<script>alert("Mật khẩu mới không trùng khớp!")</script>';
+				}
+			}
+			else
+			{
+				echo '<script>alert("Mật khẩu hiện tại không đúng!")</script>'; 
+			}
+        } 
+        ?>
+    </form>
+</div>
+
 		</div>
 	</div>
