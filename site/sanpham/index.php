@@ -25,5 +25,5 @@ $i=0;
 
 
 
-require_once "../layout.php";
+require "../layout.php";
 ?>
