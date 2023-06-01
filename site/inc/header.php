@@ -15,7 +15,7 @@
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="<?=$SITE_URL?>/trang-chinh">
       <img src="https://cdn.onlinewebfonts.com/svg/img_142579.png" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
     <div class="navbar-search">
