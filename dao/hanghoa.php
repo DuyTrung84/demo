@@ -23,6 +23,9 @@
         $sql = "SELECT * FROM hang_hoa";
         return pdo_query($sql);
        }
+       function hang_hoa_tang_so_luot_xem($ma_hh){
+        $sql = "UPDATE hang_hoa SET so_luot_xem = so_luot_xem + 1 WHERE ma_hh=?";
+       }
        function hang_hoa_select_all_with_loai(){
         $sql = "SELECT hang_hoa.ma_hh, hang_hoa.ten_hh, hang_hoa.don_gia, hang_hoa.giam_gia, hang_hoa.hinh, hang_hoa.so_luot_xem, hang_hoa.mo_ta, loai_hang.ten_loai 
                 FROM hang_hoa
