@@ -63,6 +63,8 @@
                             {
                                 header("Location: $SITE_URL/trang-chinh");
                             }
+                    }else{
+                        echo '<script>alert("Sai tài khoản hoặc mật khẩu!")</script>';
                     }
                     
                 }
