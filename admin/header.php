@@ -1,7 +1,28 @@
-<?php require_once '../../global.php' ?>
+<?php 
+  $isLoggedIn = isset($_SESSION['user']);
+
+  if (isset($_POST['logout'])) {
+    session_destroy();
+    setcookie('email', '', time() - 3600);
+    setcookie('mat_khau', '', time()- 3600);
+    header('Location: ' . "$SITE_URL/trang-chinh");
+    exit;
+  }
+  require_once '../../global.php' 
+?>
 
 <div class="container">
-  <h1 class="alert alert-success ">Quản trị website</h1>
+    <div class="d-flex justify-content-between align-items-center alert alert-success">
+        <h1 class=" m-0">Quản trị website</h1>
+        <div>
+          <span class="m-0">
+            Xin chào, <?php echo isset($_SESSION['user']['ho_ten']) ? $_SESSION['user']['ho_ten'] : 'Khách'; ?>!
+          </span>
+          <form action="" method="post" class="d-inline">
+            <button type="submit" class="btn btn-danger" name="logout">Đăng xuất</button>
+          </form>
+        </div>
+    </div>
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link" href="<?=$SITE_URL?>/trang-chinh">Đi tới trang web</a>

@@ -35,7 +35,7 @@
                     <div class="container">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <p class="text-secondary">AVT:</p> <img class="card-img-top" src="<?php echo $_SESSION['user']['hinh'] ?>"style="width:25%">
+                                <p class="text-secondary">AVT:</p> <img class="card-img-top" src="<?=$CONTENT_URL?>/img/<?php echo $_SESSION['user']['hinh'] ?>"style="width:25%">
                             </li>
                             <li class="list-group-item">
                                 <p class="text-secondary">Tên: <b><?php echo $_SESSION['user']['ho_ten'] ?></b></p>
@@ -44,7 +44,7 @@
                                 <p class="text-secondary">Email: <b><?php echo $_SESSION['user']['email'] ?></b></p>
                             </li>
                             <li class="list-group-item ">
-                                <p class="text-secondary">Vai trò: <b><?php echo $_SESSION['user']['vai_tro'] ?></b></p>
+                                <p class="text-secondary">Vai trò: <b><?php echo ($_SESSION['user']['vai_tro'])?"Admin": "Member" ?></b></p>
                             </li>
                             <li class="list-group-item "></li>
                         </ul>
@@ -68,7 +68,21 @@
                     </form>
                     
 
-                    <?php 
+                    <?php
+                    if(isset($_POST['btn_edit_tk'])){
+                        $tk=tk_select_by_id($_SESSION['user']['ma_tk']);
+                        $email=$_POST['email'];
+                        $ho_ten=$_POST['ho_ten'];
+                        
+                        $up_hinh = save_file("img", "$IMAGE_DIR/");
+
+                        
+                        tk_update($ma_tk,$email,$mat_khau,$ho_ten,$up_hinh,$vai_tro,$_SESSION['user']['ma_tk']);
+                        echo '<script>alert("Cập nhật thành công!")</script>';
+                        $_SESSION['user']=tk_select_by_id($_SESSION['user']['ma_tk']);
+                                
+
+                    }  
                     ?>
                 <!-- -->
                 </div>
