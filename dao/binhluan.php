@@ -36,10 +36,5 @@
         return pdo_query($sql, $ma_hh);
        }
 
-//        function hien_thi_binh_luan_theo_hang_hoa($ma_hh) {
-//         $binh_luan_list = binh_luan_select_by_hang_hoa($ma_hh);
-//         $sql = "SELECT b.*, hh.ten_hh , tk.ho_ten FROM tai_khoan tk JOIN binh_luan b ON tk.ma_tk=b.ma_tk JOIN hang_hoa hh ON hh.ma_hh=b.ma_hh WHERE b.ma_hh=? ORDER BY ngay_bl DESC";
-//         return pdo_query_one($sql, $ma_hh);
-// }
                             
 ?>
