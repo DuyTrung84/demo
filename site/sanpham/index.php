@@ -15,14 +15,13 @@ if(exist_param("chi-tiet-ui")){
     }
     
 }
-// else if(exist_param("categories")){
-//  $VIEW_NAME = "hang-hoa/categories.php";
-// }
+else if(exist_param("categories")){
+ $VIEW_NAME = "sanpham/categories.php";
+}
 else{
  $VIEW_NAME = "trang-chinh";
 }
 $i=0;
-
 
 
 

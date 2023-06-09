@@ -32,7 +32,11 @@
                 FROM hang_hoa
                 JOIN loai_hang ON hang_hoa.ma_loai = loai_hang.ma_loai";
         return pdo_query($sql);
-    }
+        }
+        function hang_hoa_select_by_loai_hang($ma_loai){ 
+            $sql = "SELECT * FROM hang_hoa WHERE ma_loai=?";
+            return pdo_query($sql, $ma_loai);
+           }
        function hang_hoa_select_by_id($ma_hh){
         $sql = "SELECT * FROM hang_hoa WHERE ma_hh=?";
         return pdo_query_one($sql, $ma_hh);
