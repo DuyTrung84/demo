@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img src="<?=$CONTENT_URL?>/img/<?=$hinh?>" alt="Product image" class="img-fluid">
+            <img src="<?=$CONTENT_URL?>/img/<?=$hinh?>" alt="Product image" class="img-fluid" style="width:80%; height:100%;">
         </div>
         <div class="col-md-6">
             <h2><?php echo $product['ten_hh']?></h2>

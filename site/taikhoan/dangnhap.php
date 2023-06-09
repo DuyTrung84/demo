@@ -24,11 +24,11 @@
         <form action="" name="login" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Nhập email" value="<?=$email?>">
+                <input type="email" class="form-control" name="email" placeholder="Nhập email" value="<?=$email?>" required>
             </div>
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
-                <input type="password" class="form-control" id="mat_khau" name="mat_khau" placeholder="Nhập mật khẩu" value="<?=$mat_khau?>">
+                <input type="password" class="form-control" id="mat_khau" name="mat_khau" placeholder="Nhập mật khẩu" value="<?=$mat_khau?>" required>
             </div>
             <div style="text-align:left;">
                 <input name="ghi_nho" type="checkbox"> Ghi nhớ tài khoản?
@@ -63,7 +63,7 @@
                             {
                                 header("Location: $SITE_URL/trang-chinh");
                             }
-                    }else{
+                    }else {
                         echo '<script>alert("Sai tài khoản hoặc mật khẩu!")</script>';
                     }
                     
