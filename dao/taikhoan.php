@@ -8,6 +8,10 @@
         $sql = "UPDATE tai_khoan SET email=?,mat_khau=?,ho_ten=?,hinh=?,vai_tro=? WHERE ma_tk=?";
         pdo_execute($sql,$email,$mat_khau,$ho_ten,$hinh,$vai_tro,$ma_tk);
        }
+       function tk_update_user($email,$ho_ten,$hinh,$ma_tk){
+        $sql = "UPDATE tai_khoan SET email=?,ho_ten=? WHERE ma_tk=?";
+        pdo_execute($sql,$email,$ho_ten,$hinh,$ma_tk);
+       }
        function tk_update_mk($mat_khau,$ma_tk){
         $sql = "UPDATE tai_khoan SET mat_khau=? WHERE ma_tk=?";
         pdo_execute($sql,$mat_khau,$ma_tk);

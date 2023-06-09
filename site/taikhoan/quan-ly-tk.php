@@ -35,7 +35,7 @@
                     <div class="container">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <p class="text-secondary">AVT:</p> <img class="card-img-top" src="<?php echo $_SESSION['user']['hinh'] ?>"style="width:25%">
+                                <p class="text-secondary">AVT:</p> <img class="card-img-top" src="<?=$CONTENT_URL?>/img/<?php echo $_SESSION['user']['hinh'] ?>"style="width:25%">
                             </li>
                             <li class="list-group-item">
                                 <p class="text-secondary">Tên: <b><?php echo $_SESSION['user']['ho_ten'] ?></b></p>
@@ -44,7 +44,7 @@
                                 <p class="text-secondary">Email: <b><?php echo $_SESSION['user']['email'] ?></b></p>
                             </li>
                             <li class="list-group-item ">
-                                <p class="text-secondary">Vai trò: <b><?php echo $_SESSION['user']['vai_tro'] ?></b></p>
+                                <p class="text-secondary">Vai trò: <b><?php echo ($_SESSION['user']['vai_tro'])?"Admin": "Member" ?></b></p>
                             </li>
                             <li class="list-group-item "></li>
                         </ul>
