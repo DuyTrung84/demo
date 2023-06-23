@@ -54,7 +54,7 @@
                         }else{
                             tk_insert($email,$mat_khau,$ho_ten,$img_name,$vai_tro);
                             echo '<script>alert("Đăng kí tài khoản thành công")</script>';
-                            header("Location : $SITE_URL/taikhoan/dangnhap.php");
+                            header("Location:$SITE_URL/taikhoan/dangnhap.php");
                         }
 
                     }

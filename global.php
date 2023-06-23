@@ -64,16 +64,18 @@
     * phép sử dụng thì cần thiết phải gọi hàm này trước
     **/
     function check_login(){
-        global $SITE_URL;
+        global $SITE_URL, $ADMIN_URL;
         if(isset($_SESSION['user'])){
-        if($_SESSION['user']['vai_tro'] == 1){
-        return;
-        }
-        if(strpos($_SERVER["REQUEST_URI"], '/admin/') == FALSE){
-        return;
-        }
+            if($_SESSION['user']['vai_tro'] == 1){
+                return;
+            }
+            if(strpos($_SERVER["REQUEST_URI"], '/admin/') === 0){
+                return;
+            }
         }
         $_SESSION['request_uri'] = $_SERVER["REQUEST_URI"];
-        header("location: $SITE_URL/tai-khoan/dang-nhap.php");
-       }
+        
+        header("Location: $SITE_URL/trang-chinh");
+        exit;
+    }
 ?>
